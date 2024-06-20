@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Foe_Utils;
+
+Startup startup = new Startup();
+startup.Start();
