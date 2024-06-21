@@ -12,7 +12,7 @@ namespace Foe_Utils.Component
         public Retry(string customSentence, Action componentToExecute)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"{customSentence}[y/n]:");
+            Console.Write($"{customSentence}[y/n]: ");
             string value = Console.ReadLine();
             if (value == "y") componentToExecute();
             else
