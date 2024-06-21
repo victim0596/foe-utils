@@ -31,7 +31,7 @@ namespace Foe_Utils.Component
             dictionaryMenu.Add(0, () => new CalculateGeTitan().calculate());
             dictionaryMenu.Add(1, () => new FrontenacCalculator().calculate());
             dictionaryMenu.Add(2, () => new CalculateBuildingEfficiency().calculate());
-            dictionaryMenu.Add(99, () => new Exit());
+            dictionaryMenu.Add(99, () => Environment.Exit(0));
             dictionaryMenu[idMenu]();
         }
     }
