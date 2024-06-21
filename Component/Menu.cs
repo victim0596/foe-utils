@@ -30,6 +30,7 @@ namespace Foe_Utils.Component
             Dictionary<int, Action> dictionaryMenu = new Dictionary<int, Action>();
             dictionaryMenu.Add(0, () => new CalculateGeTitan().calculate());
             dictionaryMenu.Add(1, () => new FrontenacCalculator().calculate());
+            dictionaryMenu.Add(2, () => new CalculateBuildingEfficiency().calculate());
             dictionaryMenu.Add(99, () => new Exit());
             dictionaryMenu[idMenu]();
         }
