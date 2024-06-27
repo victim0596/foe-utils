@@ -48,34 +48,25 @@ namespace Foe_Utils.Modules
         {
             Building building = dataReading();
             var table = new Table();
-            table.AddColumn(new TableColumn("Building name").Centered());
-            table.AddColumn(new TableColumn("[blue]x Size[/]").Centered());
-            table.AddColumn(new TableColumn("[red]y Size[/]").Centered());
-            table.AddColumn(new TableColumn("Road Required").Centered());
-            table.AddColumn(new TableColumn("[gold3_1]Forge points[/]").Centered());
-            table.AddColumn(new TableColumn("[orange3]Attack[/] per [orange3]attack[/]").Centered());
-            table.AddColumn(new TableColumn("[orange3]Defence[/] per [orange3]attack[/]").Centered());
-            table.AddColumn(new TableColumn("[deepskyblue1]Attack[/] per [deepskyblue1]defence[/]").Centered());
-            table.AddColumn(new TableColumn("[deepskyblue1]Defence[/] per [deepskyblue1]defence[/]").Centered());
-            table.AddColumn(new TableColumn("[lightskyblue1]Goods[/]").Centered());
-            table.AddColumn(new TableColumn("[grey69]Troops[/]").Centered());
-            table.AddColumn(new TableColumn("Efficiency").Centered());
+
+            table.AddColumn(new TableColumn("Property"));
+            table.AddColumn(new TableColumn("Value"));
 
             double efficiencyTotal = calculateEfficiency(building);
             string efficiencyString = efficiencyTotal < 100 ? $"[red]{efficiencyTotal.ToString("N0")}%[/]" : $"[green]{efficiencyTotal.ToString("N0")}%[/]";
-            table.AddRow(building.name, 
-                building.xSize.ToString(), 
-                building.ySize.ToString(), 
-                building.roadRequired, 
-                building.forgePoints.ToString(),
-                building.attAtt.ToString(),
-                building.defAtt.ToString(),
-                building.attDef.ToString(),
-                building.defDef.ToString(),
-                building.goods.ToString(),
-                building.troops.ToString(),
-                efficiencyString
-                );
+
+            table.AddRow("Building name", building.name);
+            table.AddRow("[blue]x[/] Size", building.xSize.ToString());
+            table.AddRow("[red]y[/] Size", building.ySize.ToString());
+            table.AddRow("Road Required", building.roadRequired);
+            table.AddRow("[gold3_1]Forge points[/]", building.forgePoints.ToString());
+            table.AddRow("[orange3]Attack[/] per [orange3]attack[/]", building.attAtt.ToString());
+            table.AddRow("[orange3]Defence[/] per [orange3]attack[/]", building.defAtt.ToString());
+            table.AddRow("[deepskyblue1]Attack[/] per [deepskyblue1]defence[/]", building.attDef.ToString());
+            table.AddRow("[deepskyblue1]Defence[/] per [deepskyblue1]defence[/]", building.defDef.ToString());
+            table.AddRow("[lightskyblue1]Goods[/]", building.goods.ToString());
+            table.AddRow("[grey69]Troops[/]", building.troops.ToString());
+            table.AddRow("Efficiency", efficiencyString);
 
             Console.WriteLine();
             AnsiConsole.Write(table);
